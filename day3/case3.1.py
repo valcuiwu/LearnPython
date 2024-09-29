@@ -34,16 +34,16 @@ def openfile(addr = '../day2/user.txt',mode = 'r+',encoding_argu= 'utf-8'):
         if name in db:
             nonlocal flag
             flag = 1
-            def password_match(password):
+            def login(password):
                 nonlocal password
                 password = input('请输入密码：')
                 if password == db[name]:
                     print('登录成功')
-            return password_match
+            return login
         else:
             nonlocal flag
             flag = 0
-            def login(name,password):
+            def register(name,password):
                 print('该用户不存在，请先注册！')
                 name = input('请输入要注册的用户名：')
                 password = input('请输入密码：')
@@ -53,8 +53,8 @@ def openfile(addr = '../day2/user.txt',mode = 'r+',encoding_argu= 'utf-8'):
                     content = 'username|password'
                     file.write(content + '\n')
                     openfile()
-                    password_match()
-            return login
+                    login()
+            return register
 
     print('flag =',flag)
     file.close()
@@ -68,7 +68,7 @@ func = func(username)
 
 if flag == 1:
     func(password)
-#(func = password_match) or (func = login)
+#(func = login) or (func = register)
 if flag == 0:
     func(username,password)
 
