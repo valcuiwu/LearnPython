@@ -37,6 +37,7 @@ icon_x, icon_y = int((ewm_size_w - icon_w) / 2), int((ewm_size_h - icon_h) / 2)
 # 把图标“粘贴”到二维码上正中间
 ewm_img.paste(icon_small, (icon_x, icon_y))
 
+
 # 显示二维码
 ewm_img.show()  # 如果数据被clear了，会有个二维码，扫它什么都不会发生
 ewm_img.save("campus_code.jpg")
