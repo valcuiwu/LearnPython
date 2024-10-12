@@ -31,7 +31,7 @@ def match(name):
 
 def login(name):
     i = 3
-    while i:
+    while i>0:
         password = input('请输入密码：')
         if password == db[name]:
             print('登录成功')
@@ -41,8 +41,12 @@ def login(name):
             print('密码错误！请重新输入')
             i -= 1
             print('已输错%s次，还剩%s次机会' % (3-i, i))
-    if i<3:
+            print(i)
+
+    if i < 3:
         print('机会用尽，账户冻结！')
+        return
+
 
 
 def register(name, password):
@@ -82,7 +86,7 @@ while True:
         break
     else:
         login(name)
-
+        break
 file.close()
 
 
