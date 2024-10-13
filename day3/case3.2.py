@@ -27,7 +27,7 @@ def match(name):
     else:
         flag = 0
     return flag
-#为什么这里return要缩进？
+
 
 def login(name):
     i = 3
@@ -36,7 +36,6 @@ def login(name):
         if password == db[name]:
             print('登录成功')
             return
-            #为什么此处ruturn没有直接结束login函数的调用，仍然在循环？
         else:
             print('密码错误！请重新输入')
             i -= 1
